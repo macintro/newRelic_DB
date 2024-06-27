@@ -20,8 +20,8 @@ Instructions to create service account:
   Update the privilages for this account by updating the service account's privilages:
     On the right pane of the screen select the Schema Privilages tab
       Click on Selected schema and select nrdemo from the dropdown
-  
-    
+      For the purposes of this service account we are only granding select and execute rights. An admin account can be created to deal with DDL changes. 
+ 
   Click Apply (bottom right of that pane)
 
 Adding required tables:
