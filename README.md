@@ -1,32 +1,49 @@
-#For this demo we will be using a DB called NRDemo. 
-#This demo was build using MySQL. 
+# NewRelic_DB
+This repository contains the database schema and stored procedures for the NewRelic demo project. It uses MySQL as the database management system.
 
-Instructions to create DB:
-  Connect and login into MySQL server.
-  Create DB using the following command:
-    CREATE DATABASE NRDemo;
-  Verify DB was created using the following command:
-    SHOW DATABASES;
+**Database Setup**
 
-Instructions to create service account:
-  If using MySQL WorkBench navigate to Administration tab on the left pane. Under the Management section select "Users and Privilages".
-  On the right pane under User Accounts click on Add Account. 
-  Fill out form as follows:
-    Login Name: NRService
-    Authentication Type: Standard
-    Limit to Hosts Matching: %
-    Password: NRDemoService!3
+**Create Database**
+1. Connect to your MySQL server.
+2. Log in using appropriate credentials.
+3. Create a new database named NRDemo with the following command:
+```sql
+CREATE DATABASE NRDemo;
+```
+4. Verify that the database was created successfully:
+```sql
+SHOW DATABASES;
+```
 
-  Update the privilages for this account by updating the service account's privilages:
-    On the right pane of the screen select the Schema Privilages tab
-      Click on Selected schema and select nrdemo from the dropdown
-      For the purposes of this service account we are only granding select and execute rights. An admin account can be created to deal with DDL changes. 
- 
-  Click Apply (bottom right of that pane)
+### Create Service Account
 
-Adding required tables:
-  Navigate to ddl folder and run the SQL queries found on there for bothe the customerInfo table and the companyInfo. 
+1. If using MySQL Workbench:
+- Navigate to the Administration tab > Management > Users and Privileges.
+- Click "Add Account" under User Accounts.
+- Fill out the form:
+  - **Login Name:** NRService
+  - **Authentication Type:** Standard
+  - **Limit to Hosts Matching:** %
+  - **Password:** NRDemoService!3
+2. Update privileges for this account:
+- Select Schema Privileges > Selected schema: `nrdemo`.
+- Grant `SELECT` and `EXECUTE` rights. Use an admin account for DDL changes.
+- Click Apply.
 
-Adding required Stored Procedures:
-  Navigate to sp folder and run the SQL queries found on there.
+## Setting Up Tables
+
+### CustomerInfo Table
+
+1. Navigate to the `ddl` folder.
+2. Run the SQL script for creating the `customerInfo` table.
+
+### CompanyInfo Table
+
+1. Navigate to the `ddl` folder.
+2. Run the SQL script for creating the `companyInfo` table.
+
+## Setting Up Stored Procedures
+
+1. Navigate to the `sp` folder.
+2. Run the SQL scripts for creating the required stored procedures.
 
